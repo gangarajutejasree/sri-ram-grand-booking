@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Ram Grand Booking</title>
+<style>
+:root{--blue:#0b3d91;--blue2:#1677ff;--light:#eef6ff;--gold:#d9a441;--green:#16a34a;--red:#dc2626;--orange:#f59e0b;--dark:#10213d;--text:#24324a;--muted:#6b7890;--card:#fff;--bg:#f5f8fc;--shadow:0 12px 35px rgba(16,33,61,.10)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.container{width:min(1180px,92%);margin:auto}.topbar{background:#092b67;color:#fff;padding:8px 0;font-size:13px}.topbar .container{display:flex;justify-content:space-between;gap:15px}.navbar{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 3px 18px #00000012}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--blue);font-size:20px}.logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--blue2));display:grid;place-items:center;color:white;font-size:22px}.navlinks{display:flex;gap:22px;align-items:center}.navlinks a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}.navlinks a:hover{color:var(--blue2)}.btn{padding:11px 17px;border-radius:10px;background:var(--blue);color:#fff;font-weight:700;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px #0b3d9130}.btn.gold{background:var(--gold);color:#14213d}.btn.light{background:var(--light);color:var(--blue)}.btn.green{background:var(--green)}.btn.red{background:var(--red)}.btn.orange{background:var(--orange);color:#fff}.hamb{display:none;background:none;font-size:25px}.hero{min-height:650px;background:linear-gradient(90deg,#071a39cc,#071a3966),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center;color:#fff}.hero-content{max-width:720px;padding:70px 0}.hero h1{font-size:clamp(40px,6vw,72px);line-height:1.02;margin-bottom:18px}.hero h1 span{color:#ffd979}.hero p{font-size:19px;max-width:650px;color:#edf4ff;margin-bottom:30px}.searchbox{background:#fff;color:var(--text);padding:18px;border-radius:18px;box-shadow:0 20px 50px #0004;margin-top:25px}.searchgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr .8fr .8fr auto;gap:10px}.field label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin:0 0 5px}.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid #dce4ef;border-radius:9px;outline:none;background:#fff}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue2);box-shadow:0 0 0 3px #1677ff18}.section{padding:75px 0}.section.alt{background:#fff}.heading{text-align:center;max-width:700px;margin:0 auto 40px}.heading h2{font-size:35px;color:var(--dark);margin-bottom:8px}.heading p{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:var(--card);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.room-img{height:220px;width:100%;object-fit:cover}.card-body{padding:20px}.card h3{color:var(--dark);margin-bottom:8px}.muted{color:var(--muted)}.price{font-size:23px;font-weight:900;color:var(--blue);margin:12px 0}.badge{display:inline-flex;padding:5px 9px;border-radius:99px;font-size:12px;font-weight:800}.available{background:#dcfce7;color:#166534}.paid{background:#dcfce7;color:#166534}.unpaid{background:#fee2e2;color:#991b1b}.pending{background:#fef3c7;color:#92400e}.status-blue{background:#dbeafe;color:#1e40af}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.feature{padding:24px;background:#fff;border-radius:16px;text-align:center;box-shadow:var(--shadow)}.feature .ico{font-size:30px;margin-bottom:8px}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery img{width:100%;height:190px;object-fit:cover;border-radius:14px;cursor:pointer;transition:.2s}.gallery img:hover{transform:scale(1.02)}
+.gallery-item{margin:0;position:relative}.gallery-item img{display:block}.gallery-item figcaption{padding:9px 5px 0;font-size:13px;font-weight:800;color:var(--dark);text-align:center}.gallery-item img{height:210px!important}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.review{background:#fff;padding:22px;border-radius:16px;box-shadow:var(--shadow)}.stars{color:#f5a623;letter-spacing:2px}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.contact-box{background:#fff;padding:30px;border-radius:18px;box-shadow:var(--shadow)}.mapbox{min-height:300px;border-radius:18px;background:linear-gradient(135deg,#dceeff,#edf7ff);display:grid;place-items:center;text-align:center;color:var(--blue);font-weight:800}.footer{background:#091a35;color:#cbd7e8;padding:50px 0 25px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.footer h3{color:#fff;margin-bottom:12px}.footer a{color:#cbd7e8;text-decoration:none;display:block;margin:7px 0}.footer-bottom{border-top:1px solid #ffffff18;margin-top:35px;padding-top:20px;text-align:center;font-size:13px}.modal{position:fixed;inset:0;background:#071426cc;z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{background:#fff;border-radius:18px;max-width:850px;width:100%;max-height:92vh;overflow:auto;padding:28px;position:relative}.close{position:absolute;right:15px;top:12px;width:38px;height:38px;border-radius:50%;background:#eef2f7;font-size:22px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.formgrid .full{grid-column:1/-1}.modal-title{font-size:28px;color:var(--dark);margin-bottom:18px}.summary{background:#f6f9fd;border-radius:13px;padding:18px;margin:15px 0}.summary-row{display:flex;justify-content:space-between;padding:7px 0}.summary-row.total{border-top:1px solid #dce4ef;margin-top:7px;padding-top:14px;font-size:20px;font-weight:900}.dashboard{display:none;min-height:100vh;background:#f4f7fb}.dash-layout{display:grid;grid-template-columns:250px 1fr;min-height:100vh}.sidebar{background:#081b38;color:#fff;padding:25px 16px}.sidebar .brand{color:#fff;margin-bottom:28px;padding:0 8px}.side-btn{display:block;width:100%;text-align:left;background:transparent;color:#dbe7fa;padding:12px 13px;border-radius:9px;margin:4px 0}.side-btn:hover,.side-btn.active{background:#ffffff14;color:#fff}.dash-main{padding:28px}.dash-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;gap:15px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat{background:#fff;padding:20px;border-radius:15px;box-shadow:var(--shadow)}.stat small{color:var(--muted)}.stat strong{font-size:28px;display:block;margin-top:4px;color:var(--dark)}.panel{background:#fff;border-radius:15px;box-shadow:var(--shadow);padding:20px;margin-top:20px}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:800px}.table th,.table td{text-align:left;padding:13px;border-bottom:1px solid #edf0f5;font-size:13px}.table th{color:var(--muted);font-size:12px}.alert{padding:13px;border-radius:10px;background:#fff7df;margin-bottom:8px}.login-card{max-width:450px;margin:8vh auto;background:#fff;padding:35px;border-radius:20px;box-shadow:var(--shadow)}.login-card h2{text-align:center;margin-bottom:6px;color:var(--dark)}.login-card p{text-align:center;color:var(--muted);margin-bottom:25px}.login-card .field{margin-bottom:15px}.center{text-align:center}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#10213d;color:#fff;padding:13px 17px;border-radius:10px;z-index:5000;display:none;box-shadow:var(--shadow)}.toast.show{display:block}.lightbox img{max-height:75vh;max-width:90vw;border-radius:12px}.qr{width:150px;height:150px;background:repeating-linear-gradient(45deg,#111 0 3px,#fff 3px 7px);border:8px solid #fff;box-shadow:0 2px 12px #0002;margin:15px auto}.recommend{background:linear-gradient(135deg,#eef6ff,#fff);padding:20px;border-radius:15px;border:1px solid #d8e8ff}.room-status-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.room-status{padding:15px;border-radius:12px;background:#fff;border:1px solid #e7edf6}.room-status strong{display:block}.progress{display:flex;gap:6px;margin:15px 0}.progress span{flex:1;padding:8px;background:#e9eef7;text-align:center;border-radius:7px;font-size:12px}.progress span.active{background:#dbeafe;color:#174ea6;font-weight:800}.dark{--bg:#0c1524;--card:#122038;--text:#e5edf9;--dark:#fff;--muted:#9eacc1}.dark .navbar,.dark .field input,.dark .field select,.dark .field textarea,.dark .feature,.dark .card,.dark .review,.dark .contact-box,.dark .panel,.dark .stat,.dark .modal-box{background:#122038;color:#e5edf9}.dark .navlinks a{color:#e5edf9}.dark .searchbox,.dark .summary{background:#122038}.dark .summary{color:#e5edf9}.dark .field input,.dark .field select,.dark .field textarea{border-color:#31425e}.dark .section.alt{background:#101b2e}
+@media(max-width:1000px){.searchgrid{grid-template-columns:1fr 1fr}.cards,.reviews{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.room-status-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.topbar .container{flex-direction:column;gap:3px}.navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.hamb{display:block}.hero{min-height:700px}.hero-content{padding:50px 0}.searchgrid,.cards,.reviews,.contact-grid,.formgrid,.footer-grid{grid-template-columns:1fr}.formgrid .full{grid-column:auto}.features{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.dash-layout{grid-template-columns:1fr}.sidebar{position:relative;min-height:auto}.room-status-grid{grid-template-columns:1fr 1fr}.dash-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+
+<div id="site">
+  <div class="topbar"><div class="container"><span>🏨 Sri Ram Grand • Vijayawada</span><span>📞 +91 94939 85678</span></div></div>
+  <header class="navbar">
+    <div class="container nav">
+      <a class="brand" href="#home"><span class="logo">🏨</span>SRI RAM GRAND</a>
+      <button class="hamb" onclick="toggleMenu()">☰</button>
+      <nav class="navlinks" id="navlinks">
+        <a href="#home">Home</a><a href="#rooms">Rooms</a><a href="#availability">Availability</a><a href="#facilities">Facilities</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+        <button class="btn light" onclick="openCustomerLogin()">Login</button>
+        <button class="btn" onclick="openBooking()">Book Now</button>
+        <button class="btn gold" onclick="showAdminLogin()">Admin Sign In</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <h1>Welcome to <span>Sri Ram Grand</span></h1>
+        <p>Book your stay with comfort, transparent pricing, room availability, digital check-in and direct hotel support.</p>
+        <div>
+          <button class="btn gold" onclick="openBooking()">Book Your Stay</button>
+          <button class="btn light" onclick="document.querySelector('#rooms').scrollIntoView()">View Rooms</button>
+        </div>
+        <div class="searchbox">
+          <div class="searchgrid">
+            <div class="field"><label>Location</label><input value="Vijayawada" readonly></div>
+            <div class="field"><label>Check-in</label><input type="date" id="searchIn"></div>
+            <div class="field"><label>Check-out</label><input type="date" id="searchOut"></div>
+            <div class="field"><label>Adults</label><select id="searchAdults"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+            <div class="field"><label>Rooms</label><select id="searchRooms"><option selected>1</option><option>2</option><option>3</option></select></div>
+            <button class="btn" onclick="checkAvailability()">🔍 Search</button>
+          </div>
+        </div><p class="muted center" style="margin-top:18px">Photos supplied for Sri Ram Grand are shown above. Click any photo to enlarge it.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="heading"><h2>Everything You Need for a Smooth Stay</h2><p>A complete booking experience for guests and a practical management system for the hotel team.</p></div>
+        <div class="features">
+          <div class="feature"><div class="ico">🛏️</div><b>Comfortable Rooms</b><p class="muted">Choose from configured room options.</p></div>
+          <div class="feature"><div class="ico">📅</div><b>Easy Booking</b><p class="muted">Check dates and reserve in a few steps.</p></div>
+          <div class="feature"><div class="ico">💳</div><b>Payment Status</b><p class="muted">Clearly see PAID or NOT PAID.</p></div>
+          <div class="feature"><div class="ico">📞</div><b>Direct Support</b><p class="muted">Call Sri Ram Grand when help is needed.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="rooms">
+      <div class="container">
+        <div class="heading"><h2>Rooms at Sri Ram Grand</h2><p>Choose a room, compare details and check availability.</p></div>
+        <div class="cards" id="roomCards"></div>
+      </div>
+    </section>
+
+    <section class="section" id="availability">
+      <div class="container">
+        <div class="heading"><h2>Live-Style Room Status</h2><p>Demo room status board. Admin can update room status.</p></div>
+        <div class="room-status-grid" id="roomStatusGrid"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="facilities">
+      <div class="container">
+        <div class="heading"><h2>Hotel Facilities</h2><p>Facilities shown here can be configured by the hotel admin.</p></div>
+        <div class="features">
+          <div class="feature"><div class="ico">📶</div><b>Free Wi-Fi</b></div>
+          <div class="feature"><div class="ico">🚗</div><b>Parking</b></div>
+          <div class="feature"><div class="ico">❄️</div><b>Air Conditioning</b></div>
+          <div class="feature"><div class="ico">🧺</div><b>Laundry</b></div>
+          <div class="feature"><div class="ico">🛗</div><b>Lift</b></div>
+          <div class="feature"><div class="ico">🛁</div><b>Attached Bathroom</b></div>
+          <div class="feature"><div class="ico">🛎️</div><b>Hotel Service</b></div>
+          <div class="feature"><div class="ico">📞</div><b>Direct Support</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="heading"><h2>Explore Sri Ram Grand</h2><p>Hotel, room and hospitality images.</p></div>
+        
+<div style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:-18px auto 22px">
+  <span class="badge status-blue">All</span>
+  <span class="badge status-blue">Rooms</span>
+  <span class="badge status-blue">Exterior</span>
+  <span class="badge status-blue">Food &amp; Drink</span>
+  <span class="badge status-blue">From Visitors</span>
+  <span class="badge status-blue">By Owner</span>
+  <span class="badge status-blue">Street View &amp; 360°</span>
+</div>
+<div class="gallery" id="photoGallery"><figure class="gallery-item"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QswqnqUiWrh3WJ_XCIXyUL6FzosF0S-zc1Ao6MoFTFKmmwXrGjY6SaayTGftmcaPwP43E1OyEWDlM6bqxaY92pw4lX0HVWU-wOxtAHvzSZucWjS3tAxb531r4Ou-GpzyzKrYGIrOideOEh=w224-h361-k-no" alt="Hotel Building" onclick="lightbox(this.src)"><figcaption>Hotel Building</figcaption></figure><figure class="gallery-item"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TLTrBp9kfVG9yVDG7qyCOU6E35uHcE8FjP-ico81VpDqhJ1b3Et4AE8uOvakkffYmKJRnTuOQFHM34YSvEYCzWLi3G82-WznAmz9AGTI2w13q3_IZM-8fdK_LlUYBBXloSn2PaQA=w529-h298-k-no" alt="Room" onclick="lightbox(this.src)"><figcaption>Room</figcaption></figure><figure class="gallery-item"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qatrd_yYwBaX1dxPl3dmoWvThG1TN96t-Xs4Cj9o9vfekpSOjnwTS9DkcV8MOVmjhvdiCNiGok_962rnMf6UVLbMK8XkRgTQMKTFK7lrVd4nTx3SW-k8K2pAH6c7MokMtvs7teHeTOEL8=w224-h398-k-no" alt="Room – Guest View" onclick="lightbox(this.src)"><figcaption>Room – Guest View</figcaption></figure><figure class="gallery-item"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SVMkjBr91Yam_4qFZL-KHWtEUpaOaA6dcMTphznL_eVJm-AZwC6d5iJy_YymWLtkFE_mQ3kRVvPUeCPXXW1Rb_j-piXIbBX2Jon2WjRiB3yLQ_UuQabj1XUrr_CIkfPvXoGmQ=w529-h298-k-no" alt="Entrance / Exterior" onclick="lightbox(this.src)"><figcaption>Entrance / Exterior</figcaption></figure><figure class="gallery-item"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T5ndQqRFMenxFIGCvuJx6Db3SgLDrAlDT80riMIgYxgb7KjjDbiz7mEkELRKxTDTFbUVucyPebS9Z9kMqfxEUdoUx6klDZHEOrfNRv1jWdc1JrEdqudwslWwMcr6GegUWZzBQ=w224-h298-k-no" alt="Food & Drink" onclick="lightbox(this.src)"><figcaption>Food & Drink</figcaption></figure><figure class="gallery-item"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Rbs6zlOLbldUM0y8RZRPz2y6aBoFBCG2cMIIX236v_EqF207gcEIAvNdMolWORrveKGUX75aNbR9R3PNS6JsbLXhwaVx_Q89sP-tFMKBkqCbe_CXPjUQju9ybWr0FpBelnggFe=w224-h298-k-no" alt="Sri Ram Grand Front" onclick="lightbox(this.src)"><figcaption>Sri Ram Grand Front</figcaption></figure><figure class="gallery-item"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SBN6wSS9Q-fX8Jk0sonW31F06Q3eB8ajR9hp92QhQzu6TCb2VJhWExa7uwo4CKU-4_D9dZq81GQfzd72N0qCCUYr-A3lKJ03aLplmAhjvnHkMDOOb-s99AIaZUp4xD3GJpqMHNOYb9VAM-=w529-h298-k-no" alt="Bathroom" onclick="lightbox(this.src)"><figcaption>Bathroom</figcaption></figure><figure class="gallery-item"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TF-cjD6Rl3mAS8uYWSKHtKBlI6ZclmXlGgzS-IN6UYeMojyzdG0CwFePn6kNJhpyxsJBJCprTwgHED-RpcrWfn-FNoiP_s7CXMF7ZtjaXT8tiadKr8Od3DFNxiPyVJi8lgRqU=w224-h298-k-no-pi69.99998-ya90.00001-ro90-fo100" alt="Room Interior / 360°" onclick="lightbox(this.src)"><figcaption>Room Interior / 360°</figcaption></figure></div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="heading"><h2>Guest Reviews</h2><p>Verified-stay reviews can be managed by the hotel admin.</p></div>
+        <div class="reviews">
+          <div class="review"><div class="stars">★★★★★</div><h3>Comfortable Stay</h3><p class="muted">Demo review for the project. Replace with approved real guest feedback.</p><br><b>Verified Stay</b></div>
+          <div class="review"><div class="stars">★★★★☆</div><h3>Good Experience</h3><p class="muted">Demo review for the project. Real reviews should be approved by the admin.</p><br><b>Verified Stay</b></div>
+          <div class="review"><div class="stars">★★★★★</div><h3>Friendly Service</h3><p class="muted">Demo review for the project. Do not present demo content as real customer feedback.</p><br><b>Verified Stay</b></div>
+        </div>
+        <div class="center" style="margin-top:25px"><button class="btn" onclick="openReview()">⭐ Write a Review</button></div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="heading"><h2>Smart Room Recommendation</h2><p>Answer a few questions and receive a simple rule-based room recommendation.</p></div>
+        <div class="recommend">
+          <div class="formgrid">
+            <div class="field"><label>Stay Type</label><select id="stayType"><option>Solo</option><option>Couple</option><option selected>Family</option><option>Business</option></select></div>
+            <div class="field"><label>Priority</label><select id="priority"><option>Lowest Price</option><option selected>Comfort</option><option>More Space</option><option>AC</option></select></div>
+          </div>
+          <button class="btn" style="margin-top:14px" onclick="recommendRoom()">✨ Find My Perfect Room</button>
+          <div id="recommendResult" style="margin-top:15px"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid" id="contact">
+        <div class="contact-box">
+          <h2>📞 Contact Sri Ram Grand</h2>
+          <p style="margin:12px 0" class="muted"><b>Address:</b><br>14-9-7, Tirumalarao Street, Hanumanpet, Vijayawada, Andhra Pradesh, India</p>
+          <p class="muted"><b>Contact:</b> +91 94939 85678</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
+            <a class="btn" href="tel:+919493985678">📞 Call Hotel</a>
+            <a class="btn green" href="https://wa.me/919493985678?text=Hello%20Sri%20Ram%20Grand%2C%20I%20need%20help%20with%20my%20booking." target="_blank">💬 WhatsApp</a>
+            <a class="btn light" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Sri+Ram+Grand%2C+14-9-7%2C+Tirumalarao+Street%2C+Hanumanpet%2C+Vijayawada">📍 Directions</a>
+          </div>
+        </div>
+        <div class="mapbox">
+          <div><div style="font-size:45px">📍</div><h3>Sri Ram Grand</h3><p>Hanumanpet, Vijayawada</p><br><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Sri+Ram+Grand%2C+14-9-7%2C+Tirumalarao+Street%2C+Hanumanpet%2C+Vijayawada">Open Google Maps</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><h3>🏨 Sri Ram Grand</h3><p>Book Your Stay. Stay With Comfort.</p><p style="margin-top:10px">14-9-7, Tirumalarao Street, Hanumanpet, Vijayawada, Andhra Pradesh, India</p><p style="margin-top:8px">📞 +91 94939 85678</p></div>
+      <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#rooms">Rooms</a><a href="#availability">Availability</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+      <div><h3>Account</h3><a href="#" onclick="openCustomerLogin();return false">Customer Login</a><a href="#" onclick="showAdminLogin();return false">Admin Sign In</a><a href="#" onclick="toggleDark();return false">🌙 Toggle Dark Mode</a></div>
+    </div>
+    <div class="container footer-bottom">© 2026 Sri Ram Grand Booking • Demo hotel booking project</div>
+  </footer>
+</div>
+
+<!-- CUSTOMER LOGIN -->
+<div class="modal" id="customerLoginModal"><div class="modal-box" style="max-width:460px"><button class="close" onclick="closeModal('customerLoginModal')">×</button><h2 class="modal-title">👤 Customer Login</h2><div class="field"><label>Email</label><input id="customerEmail" type="email" placeholder="you@example.com"></div><div class="field" style="margin-top:12px"><label>Password</label><input id="customerPassword" type="password" placeholder="Password"></div><button class="btn" style="width:100%;margin-top:18px" onclick="customerLogin()">Login</button><p class="muted center" style="margin-top:14px">Demo: any valid-looking email + any password.</p></div></div>
+
+<!-- ADMIN LOGIN -->
+<div class="modal" id="adminLoginModal"><div class="modal-box" style="max-width:460px"><button class="close" onclick="closeModal('adminLoginModal')">×</button><h2 class="modal-title">🔐 Sri Ram Grand Admin Sign In</h2><p class="muted">Only authenticated admins can access hotel management.</p><div class="field" style="margin-top:15px"><label>Admin Email</label><input id="adminEmail" type="email" placeholder="admin@sriramgrand.demo"></div><div class="field" style="margin-top:12px"><label>Admin Password</label><input id="adminPassword" type="password" placeholder="Admin@123"></div><button class="btn" style="width:100%;margin-top:18px" onclick="adminLogin()">Sign In to Admin Dashboard</button><div class="summary" style="margin-top:18px"><b>Demo Admin</b><br>Email: admin@sriramgrand.demo<br>Password: Admin@123</div></div></div>
+
+<!-- BOOKING MODAL -->
+<div class="modal" id="bookingModal"><div class="modal-box"><button class="close" onclick="closeModal('bookingModal')">×</button><h2 class="modal-title">🏨 Book Your Stay at Sri Ram Grand</h2><div class="progress"><span class="active">1 Room</span><span class="active">2 Details</span><span>3 Payment</span><span>4 Confirmed</span></div><div class="formgrid">
+<div class="field"><label>Room</label><select id="bookRoom"></select></div>
+<div class="field"><label>Check-in</label><input type="date" id="bookIn"></div>
+<div class="field"><label>Check-out</label><input type="date" id="bookOut"></div>
+<div class="field"><label>Adults</label><select id="bookAdults"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+<div class="field"><label>Full Name</label><input id="bookName" placeholder="Your name"></div>
+<div class="field"><label>Mobile Number</label><input id="bookPhone" placeholder="+91..."></div>
+<div class="field"><label>Email</label><input id="bookEmail" type="email" placeholder="you@example.com"></div>
+<div class="field"><label>Special Request</label><input id="bookRequest" placeholder="Extra pillow, late arrival..."></div>
+<div class="full summary" id="bookingSummary"></div>
+</div><button class="btn" style="width:100%" onclick="goToPayment()">Continue to Demo Payment</button></div></div>
+
+<!-- PAYMENT -->
+<div class="modal" id="paymentModal"><div class="modal-box" style="max-width:560px"><button class="close" onclick="closeModal('paymentModal')">×</button><h2 class="modal-title">💳 Complete Your Booking</h2><p class="muted">This is a simulated college-project payment. No real money is processed.</p><div class="summary" id="paymentSummary"></div><div class="formgrid"><div class="field full"><label>Payment Method</label><select id="paymentMethod"><option>UPI Demo</option><option>Card Demo</option><option>Net Banking Demo</option></select></div><div class="field full"><label>Demo Payment Reference</label><input id="paymentRef" placeholder="Optional demo reference"></div></div><button class="btn green" style="width:100%;margin-top:18px" onclick="completePayment()">✓ Pay Demo Amount & Confirm</button><button class="btn light" style="width:100%;margin-top:9px" onclick="completeUnpaid()">Continue Without Payment (NOT PAID)</button></div></div>
+
+<!-- CONFIRMATION -->
+<div class="modal" id="confirmationModal"><div class="modal-box" style="max-width:600px;text-align:center"><button class="close" onclick="closeModal('confirmationModal')">×</button><div style="font-size:55px">🎉</div><h2 class="modal-title">Booking Created</h2><div id="confirmationContent"></div><div class="qr"></div><p class="muted">Show your Booking ID at reception. QR is a visual demo only.</p><div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px"><button class="btn" onclick="window.print()">🖨️ Print</button><a class="btn green" href="tel:+919493985678">📞 Call Hotel</a><a class="btn light" target="_blank" href="https://wa.me/919493985678">💬 WhatsApp</a></div></div></div>
+
+<!-- REVIEW -->
+<div class="modal" id="reviewModal"><div class="modal-box" style="max-width:550px"><button class="close" onclick="closeModal('reviewModal')">×</button><h2 class="modal-title">⭐ Write a Review</h2><div class="field"><label>Rating</label><select id="reviewRating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div><div class="field" style="margin-top:12px"><label>Review</label><textarea id="reviewText" rows="5" placeholder="Tell us about your stay"></textarea></div><button class="btn" style="width:100%;margin-top:15px" onclick="submitReview()">Submit Review</button></div></div>
+
+<!-- LIGHTBOX -->
+<div class="modal lightbox" id="lightboxModal" onclick="closeModal('lightboxModal')"><img id="lightboxImage" src="" alt="Hotel image"></div>
+
+<!-- ADMIN APP -->
+<div class="dashboard" id="adminApp">
+<div class="dash-layout">
+<aside class="sidebar">
+  <div class="brand"><span class="logo">🏨</span>SRI RAM GRAND</div>
+  <button class="side-btn active" onclick="adminSection('dashboard',this)">🏠 Dashboard</button>
+  <button class="side-btn" onclick="adminSection('bookings',this)">📅 All Bookings</button>
+  <button class="side-btn" onclick="adminSection('rooms',this)">🛏️ Rooms</button>
+  <button class="side-btn" onclick="adminSection('customers',this)">👥 Customers</button>
+  <button class="side-btn" onclick="adminSection('payments',this)">💳 Payments</button>
+  <button class="side-btn" onclick="adminSection('housekeeping',this)">🧹 Housekeeping</button>
+  <button class="side-btn" onclick="adminSection('support',this)">📞 Support</button>
+  <button class="side-btn" onclick="adminSection('reviews',this)">⭐ Reviews</button>
+  <button class="side-btn" onclick="adminSection('gallery',this)">🖼️ Gallery</button>
+  <button class="side-btn" onclick="adminSection('reports',this)">📊 Reports</button>
+  <button class="side-btn" onclick="adminSection('settings',this)">⚙️ Settings</button>
+  <button class="side-btn" onclick="adminLogout()">🚪 Logout</button>
+</aside>
+<main class="dash-main">
+  <div class="dash-head"><div><h1 id="adminTitle">Admin Dashboard</h1><p class="muted">Sri Ram Grand hotel management</p></div><div><button class="btn light" onclick="showSite()">← Customer Website</button></div></div>
+  <div id="adminContent"></div>
+</main>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const rooms=[
+ {id:101,type:'Standard Room',price:2200,capacity:2,status:'AVAILABLE',img:'https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TLTrBp9kfVG9yVDG7qyCOU6E35uHcE8FjP-ico81VpDqhJ1b3Et4AE8uOvakkffYmKJRnTuOQFHM34YSvEYCzWLi3G82-WznAmz9AGTI2w13q3_IZM-8fdK_LlUYBBXloSn2PaQA=w529-h298-k-no',features:'Double Bed • AC • Wi-Fi • Bathroom'},
+ {id:102,type:'Deluxe Room',price:3200,capacity:3,status:'OCCUPIED',img:'https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qatrd_yYwBaX1dxPl3dmoWvThG1TN96t-Xs4Cj9o9vfekpSOjnwTS9DkcV8MOVmjhvdiCNiGok_962rnMf6UVLbMK8XkRgTQMKTFK7lrVd4nTx3SW-k8K2pAH6c7MokMtvs7teHeTOEL8=w224-h398-k-no',features:'King Bed • AC • Wi-Fi • TV • Bathroom'},
+ {id:103,type:'Deluxe Room',price:3200,capacity:3,status:'CLEANING',img:'https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SVMkjBr91Yam_4qFZL-KHWtEUpaOaA6dcMTphznL_eVJm-AZwC6d5iJy_YymWLtkFE_mQ3kRVvPUeCPXXW1Rb_j-piXIbBX2Jon2WjRiB3yLQ_UuQabj1XUrr_CIkfPvXoGmQ=w529-h298-k-no',features:'King Bed • AC • Wi-Fi • TV • Bathroom'},
+ {id:104,type:'Family Room',price:4200,capacity:4,status:'AVAILABLE',img:'https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T5ndQqRFMenxFIGCvuJx6Db3SgLDrAlDT80riMIgYxgb7KjjDbiz7mEkELRKxTDTFbUVucyPebS9Z9kMqfxEUdoUx6klDZHEOrfNRv1jWdc1JrEdqudwslWwMcr6GegUWZzBQ=w224-h298-k-no',features:'Multiple Beds • AC • Wi-Fi • Bathroom'},
+ {id:105,type:'Standard Room',price:2200,capacity:2,status:'MAINTENANCE',img:'https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Rbs6zlOLbldUM0y8RZRPz2y6aBoFBCG2cMIIX236v_EqF207gcEIAvNdMolWORrveKGUX75aNbR9R3PNS6JsbLXhwaVx_Q89sP-tFMKBkqCbe_CXPjUQju9ybWr0FpBelnggFe=w224-h298-k-no',features:'Double Bed • AC • Wi-Fi • Bathroom'}
+];
+let bookings=JSON.parse(localStorage.getItem('srgBookings')||'[]');
+let adminLogged=localStorage.getItem('srgAdmin')==='true';
+let currentBooking=null;
+
+function save(){localStorage.setItem('srgBookings',JSON.stringify(bookings))}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}
+function closeModal(id){document.getElementById(id).classList.remove('show')}
+function openModal(id){document.getElementById(id).classList.add('show')}
+function toggleMenu(){document.getElementById('navlinks').classList.toggle('open')}
+function toggleDark(){document.body.classList.toggle('dark');localStorage.setItem('dark',document.body.classList.contains('dark'))}
+if(localStorage.getItem('dark')==='true')document.body.classList.add('dark');
+
+function renderRooms(){
+ const c=document.getElementById('roomCards');
+ c.innerHTML=rooms.map(r=>`<div class="card">
+ <img class="room-img" src="${r.img}" alt="${r.type}">
+ <div class="card-body"><div style="display:flex;justify-content:space-between;gap:10px"><h3>${r.type}</h3><span class="badge ${r.status==='AVAILABLE'?'available':r.status==='OCCUPIED'?'unpaid':'pending'}">${r.status}</span></div>
+ <p class="muted">${r.features}</p><div class="price">₹${r.price.toLocaleString()} <small class="muted">/ night</small></div>
+ <button class="btn ${r.status==='AVAILABLE'?'':'light'}" ${r.status!=='AVAILABLE'?'disabled':''} onclick="openBooking(${r.id})">${r.status==='AVAILABLE'?'Book Now':'Unavailable'}</button></div></div>`).join('');
+}
+function renderStatus(){
+ document.getElementById('roomStatusGrid').innerHTML=rooms.map(r=>`<div class="room-status"><strong>Room ${r.id}</strong><span>${r.type}</span><br><br><span class="badge ${r.status==='AVAILABLE'?'available':r.status==='OCCUPIED'?'unpaid':r.status==='MAINTENANCE'?'unpaid':'pending'}">${r.status}</span></div>`).join('');
+}
+function openBooking(roomId=null){
+ const sel=document.getElementById('bookRoom');
+ sel.innerHTML=rooms.map(r=>`<option value="${r.id}" ${roomId==r.id?'selected':''} ${r.status!=='AVAILABLE'?'disabled':''}>${r.id} • ${r.type} • ₹${r.price}/night</option>`).join('');
+ setDefaultDates();
+ updateBookingSummary();
+ openModal('bookingModal');
+}
+function setDefaultDates(){
+ const d=new Date();d.setDate(d.getDate()+1);const out=new Date(d);out.setDate(out.getDate()+1);
+ document.getElementById('bookIn').value=d.toISOString().slice(0,10);document.getElementById('bookOut').value=out.toISOString().slice(0,10);
+}
+['bookRoom','bookIn','bookOut'].forEach(id=>document.getElementById(id).addEventListener('change',updateBookingSummary));
+function nights(){const a=new Date(document.getElementById('bookIn').value),b=new Date(document.getElementById('bookOut').value);return Math.max(0,Math.ceil((b-a)/86400000))}
+function updateBookingSummary(){
+ const r=rooms.find(x=>x.id==document.getElementById('bookRoom').value)||rooms[0], n=nights(), total=r.price*n;
+ document.getElementById('bookingSummary').innerHTML=`<div class="summary-row"><span>Room</span><b>${r.type} #${r.id}</b></div><div class="summary-row"><span>Nights</span><b>${n}</b></div><div class="summary-row"><span>Room Charges</span><b>₹${total.toLocaleString()}</b></div><div class="summary-row"><span>Demo Taxes</span><b>₹${Math.round(total*.05).toLocaleString()}</b></div><div class="summary-row total"><span>Total</span><b>₹${Math.round(total*1.05).toLocaleString()}</b></div>`;
+}
+function validateBooking(){
+ if(nights()<=0){toast('Check-out must be after check-in');return false}
+ if(!document.getElementById('bookName').value.trim()){toast('Enter customer name');return false}
+ if(!document.getElementById('bookPhone').value.trim()){toast('Enter mobile number');return false}
+ if(!document.getElementById('bookEmail').value.includes('@')){toast('Enter a valid email');return false}
+ return true;
+}
+function goToPayment(){
+ if(!validateBooking())return;
+ const r=rooms.find(x=>x.id==document.getElementById('bookRoom').value), n=nights(), total=Math.round(r.price*n*1.05);
+ currentBooking={bookingId:'SRG-'+new Date().getFullYear()+'-'+Math.floor(10000+Math.random()*89999),customerName:document.getElementById('bookName').value,phone:document.getElementById('bookPhone').value,email:document.getElementById('bookEmail').value,room:r.type,roomId:r.id,checkIn:document.getElementById('bookIn').value,checkOut:document.getElementById('bookOut').value,guests:document.getElementById('bookAdults').value,request:document.getElementById('bookRequest').value,total,paymentStatus:'NOT PAID',bookingStatus:'PENDING',created:new Date().toISOString()};
+ closeModal('bookingModal');
+ document.getElementById('paymentSummary').innerHTML=`<div class="summary-row"><span>Booking ID</span><b>${currentBooking.bookingId}</b></div><div class="summary-row"><span>Room</span><b>${currentBooking.room}</b></div><div class="summary-row"><span>Stay</span><b>${currentBooking.checkIn} → ${currentBooking.checkOut}</b></div><div class="summary-row total"><span>Amount</span><b>₹${total.toLocaleString()}</b></div>`;
+ openModal('paymentModal');
+}
+function completePayment(){if(!currentBooking)return;currentBooking.paymentStatus='PAID';currentBooking.bookingStatus='CONFIRMED';finishBooking()}
+function completeUnpaid(){if(!currentBooking)return;currentBooking.paymentStatus='NOT PAID';currentBooking.bookingStatus='PENDING';finishBooking()}
+function finishBooking(){
+ bookings.push(currentBooking);save();closeModal('paymentModal');
+ const b=currentBooking;document.getElementById('confirmationContent').innerHTML=`<div class="summary" style="text-align:left"><div class="summary-row"><span>Booking ID</span><b>${b.bookingId}</b></div><div class="summary-row"><span>Customer</span><b>${b.customerName}</b></div><div class="summary-row"><span>Room</span><b>${b.room} #${b.roomId}</b></div><div class="summary-row"><span>Check-in</span><b>${b.checkIn}</b></div><div class="summary-row"><span>Check-out</span><b>${b.checkOut}</b></div><div class="summary-row"><span>Total</span><b>₹${b.total.toLocaleString()}</b></div><div class="summary-row"><span>Payment</span><span class="badge ${b.paymentStatus==='PAID'?'paid':'unpaid'}">${b.paymentStatus}</span></div><div class="summary-row"><span>Booking</span><span class="badge ${b.bookingStatus==='CONFIRMED'?'available':'pending'}">${b.bookingStatus}</span></div></div>`;
+ openModal('confirmationModal');toast(b.paymentStatus==='PAID'?'Booking confirmed and payment marked PAID':'Booking created as NOT PAID');
+}
+function checkAvailability(){
+ const a=document.getElementById('searchIn').value,b=document.getElementById('searchOut').value;
+ if(!a||!b){toast('Select check-in and check-out dates');return}
+ if(new Date(b)<=new Date(a)){toast('Check-out must be after check-in');return}
+ document.getElementById('rooms').scrollIntoView();toast('Showing configured room availability');
+}
+function recommendRoom(){
+ const type=document.getElementById('stayType').value, priority=document.getElementById('priority').value;
+ let r=rooms.find(x=>x.status==='AVAILABLE'&&x.capacity>= (type==='Family'?3:2));
+ if(priority==='Lowest Price')r=rooms.filter(x=>x.status==='AVAILABLE').sort((a,b)=>a.price-b.price)[0];
+ if(priority==='More Space')r=rooms.filter(x=>x.status==='AVAILABLE').sort((a,b)=>b.capacity-a.capacity)[0]||r;
+ if(!r){document.getElementById('recommendResult').innerHTML='<b>No room currently available.</b>';return}
+ document.getElementById('recommendResult').innerHTML=`<b>Recommended For You: ${r.type} #${r.id}</b><p class="muted">Matches your ${type.toLowerCase()} stay and ${priority.toLowerCase()} preference.</p><button class="btn" style="margin-top:10px" onclick="openBooking(${r.id})">Book This Room</button>`;
+}
+function openCustomerLogin(){openModal('customerLoginModal')}
+function customerLogin(){const e=document.getElementById('customerEmail').value;if(!e.includes('@')){toast('Enter a valid email');return}localStorage.setItem('srgCustomer',e);closeModal('customerLoginModal');toast('Customer login successful');showMyBookings(e)}
+function showMyBookings(email){
+ const my=bookings.filter(b=>b.email===email);
+ document.getElementById('confirmationContent').innerHTML=`<h3>My Bookings</h3><p class="muted">${my.length?my.map(b=>`${b.bookingId} • ${b.room} • ${b.paymentStatus}`).join('<br>'):'No bookings yet for this email.'}</p>`;
+ openModal('confirmationModal');
+}
+function openReview(){openModal('reviewModal')}
+function submitReview(){if(!document.getElementById('reviewText').value.trim()){toast('Write your review first');return}closeModal('reviewModal');toast('Review submitted for admin approval')}
+function lightbox(src){document.getElementById('lightboxImage').src=src;openModal('lightboxModal')}
+
+function showAdminLogin(){openModal('adminLoginModal')}
+function adminLogin(){
+ const e=document.getElementById('adminEmail').value,p=document.getElementById('adminPassword').value;
+ if(e==='admin@sriramgrand.demo'&&p==='Admin@123'){localStorage.setItem('srgAdmin','true');adminLogged=true;closeModal('adminLoginModal');showAdmin();toast('Admin signed in')}
+ else toast('Incorrect demo admin credentials');
+}
+function showAdmin(){document.getElementById('site').style.display='none';document.getElementById('adminApp').style.display='block';adminSection('dashboard')}
+function showSite(){document.getElementById('adminApp').style.display='none';document.getElementById('site').style.display='block'}
+function adminLogout(){localStorage.removeItem('srgAdmin');adminLogged=false;showSite();toast('Admin logged out')}
+function adminSection(section,el){
+ document.querySelectorAll('.side-btn').forEach(x=>x.classList.remove('active'));if(el)el.classList.add('active');
+ const c=document.getElementById('adminContent');document.getElementById('adminTitle').textContent=section.charAt(0).toUpperCase()+section.slice(1);
+ if(section==='dashboard')c.innerHTML=dashboardHTML();
+ if(section==='bookings')c.innerHTML=bookingsHTML();
+ if(section==='rooms')c.innerHTML=roomsHTML();
+ if(section==='customers')c.innerHTML=customersHTML();
+ if(section==='payments')c.innerHTML=paymentsHTML();
+ if(section==='housekeeping')c.innerHTML=housekeepingHTML();
+ if(section==='support')c.innerHTML=supportHTML();
+ if(section==='reviews')c.innerHTML=reviewsHTML();
+ if(section==='gallery')c.innerHTML=galleryHTML();
+ if(section==='reports')c.innerHTML=reportsHTML();
+ if(section==='settings')c.innerHTML=settingsHTML();
+}
+function dashboardHTML(){
+ const paid=bookings.filter(b=>b.paymentStatus==='PAID').length,unpaid=bookings.filter(b=>b.paymentStatus==='NOT PAID').length,rev=bookings.filter(b=>b.paymentStatus==='PAID').reduce((s,b)=>s+b.total,0),avail=rooms.filter(r=>r.status==='AVAILABLE').length;
+ return `<div class="stats"><div class="stat"><small>Total Bookings</small><strong>${bookings.length}</strong></div><div class="stat"><small>Available Rooms</small><strong>${avail}</strong></div><div class="stat"><small>Paid Bookings</small><strong>${paid}</strong></div><div class="stat"><small>Revenue</small><strong>₹${rev.toLocaleString()}</strong></div></div>
+ <div class="panel"><h2>🔔 Smart Admin Alerts</h2><div style="margin-top:15px"><div class="alert">📅 ${bookings.filter(b=>b.checkIn===new Date().toISOString().slice(0,10)).length} check-ins today</div><div class="alert">💳 ${unpaid} unpaid booking(s)</div><div class="alert">🧹 ${rooms.filter(r=>r.status==='CLEANING').length} room(s) need housekeeping</div><div class="alert">🔧 ${rooms.filter(r=>r.status==='MAINTENANCE').length} maintenance room(s)</div></div></div>
+ <div class="panel"><h2>Quick Actions</h2><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:15px"><button class="btn" onclick="adminSection('bookings')">📅 Bookings</button><button class="btn light" onclick="adminSection('rooms')">🛏️ Room Status</button><button class="btn light" onclick="adminSection('payments')">💳 Payments</button><button class="btn light" onclick="adminSection('housekeeping')">🧹 Housekeeping</button></div></div>`;
+}
+function bookingsHTML(){
+ return `<div class="panel"><h2>All Bookings</h2><div class="table-wrap" style="margin-top:15px"><table class="table"><tr><th>ID</th><th>Customer</th><th>Room</th><th>Dates</th><th>Amount</th><th>Payment</th><th>Status</th><th>Action</th></tr>${bookings.length?bookings.map((b,i)=>`<tr><td>${b.bookingId}</td><td>${b.customerName}<br>${b.phone}</td><td>${b.room} #${b.roomId}</td><td>${b.checkIn}<br>${b.checkOut}</td><td>₹${b.total}</td><td><span class="badge ${b.paymentStatus==='PAID'?'paid':'unpaid'}">${b.paymentStatus}</span></td><td>${b.bookingStatus}</td><td><button class="btn light" onclick="adminViewBooking(${i})">View</button></td></tr>`).join(''):'<tr><td colspan="8">No bookings yet.</td></tr>'}</table></div></div>`;
+}
+function adminViewBooking(i){const b=bookings[i];alert(`BOOKING ${b.bookingId}\nCustomer: ${b.customerName}\nPhone: ${b.phone}\nRoom: ${b.room} #${b.roomId}\nDates: ${b.checkIn} to ${b.checkOut}\nAmount: ₹${b.total}\nPayment: ${b.paymentStatus}\nStatus: ${b.bookingStatus}\nRequest: ${b.request||'None'}`)}
+function roomsHTML(){
+ return `<div class="panel"><h2>Room Management</h2><p class="muted">Change room status for the demo.</p><div class="table-wrap" style="margin-top:15px"><table class="table"><tr><th>Room</th><th>Type</th><th>Price</th><th>Capacity</th><th>Status</th><th>Change</th></tr>${rooms.map(r=>`<tr><td>${r.id}</td><td>${r.type}</td><td>₹${r.price}</td><td>${r.capacity}</td><td><span class="badge ${r.status==='AVAILABLE'?'available':r.status==='OCCUPIED'?'unpaid':'pending'}">${r.status}</span></td><td><select onchange="changeRoomStatus(${r.id},this.value)"><option>AVAILABLE</option><option>OCCUPIED</option><option>CLEANING</option><option>MAINTENANCE</option></select></td></tr>`).join('')}</table></div></div>`;
+}
+function changeRoomStatus(id,status){const r=rooms.find(x=>x.id===id);r.status=status;renderRooms();renderStatus();adminSection('rooms');toast(`Room ${id} changed to ${status}`)}
+function customersHTML(){
+ const unique=[];bookings.forEach(b=>{if(!unique.some(x=>x.email===b.email))unique.push(b)});
+ return `<div class="panel"><h2>Customer Management</h2><div class="table-wrap" style="margin-top:15px"><table class="table"><tr><th>Customer</th><th>Phone</th><th>Email</th><th>Bookings</th><th>Payment</th></tr>${unique.length?unique.map(u=>{let n=bookings.filter(b=>b.email===u.email);return `<tr><td>${u.customerName}</td><td>${u.phone}</td><td>${u.email}</td><td>${n.length}</td><td>${n.map(b=>b.paymentStatus).join(', ')}</td></tr>`}).join(''):'<tr><td colspan="5">No customers yet.</td></tr>'}</table></div></div>`;
+}
+function paymentsHTML(){
+ return `<div class="panel"><h2>Payment Management</h2><div class="table-wrap" style="margin-top:15px"><table class="table"><tr><th>Payment ID</th><th>Booking</th><th>Customer</th><th>Amount</th><th>Method</th><th>Status</th><th>Action</th></tr>${bookings.length?bookings.map((b,i)=>`<tr><td>PAY-${b.bookingId.slice(-5)}</td><td>${b.bookingId}</td><td>${b.customerName}</td><td>₹${b.total}</td><td>Demo</td><td><span class="badge ${b.paymentStatus==='PAID'?'paid':'unpaid'}">${b.paymentStatus}</span></td><td><button class="btn light" onclick="togglePayment(${i})">Toggle</button></td></tr>`).join(''):'<tr><td colspan="7">No payments yet.</td></tr>'}</table></div></div>`;
+}
+function togglePayment(i){bookings[i].paymentStatus=bookings[i].paymentStatus==='PAID'?'NOT PAID':'PAID';bookings[i].bookingStatus=bookings[i].paymentStatus==='PAID'?'CONFIRMED':'PENDING';save();adminSection('payments');toast('Payment status updated')}
+function housekeepingHTML(){
+ return `<div class="panel"><h2>🧹 Housekeeping Dashboard</h2><p class="muted">Workflow: Checkout → Cleaning → Inspection → Available</p><div class="table-wrap" style="margin-top:15px"><table class="table"><tr><th>Room</th><th>Type</th><th>Current Status</th><th>Update</th></tr>${rooms.map(r=>`<tr><td>${r.id}</td><td>${r.type}</td><td>${r.status}</td><td><select onchange="changeRoomStatus(${r.id},this.value)"><option>AVAILABLE</option><option>OCCUPIED</option><option selected>${r.status}</option><option>CLEANING</option><option>MAINTENANCE</option></select></td></tr>`).join('')}</table></div></div>`;
+}
+function supportHTML(){
+ return `<div class="panel"><h2>📞 Customer Support</h2><p class="muted">Demo support queue.</p><div class="alert" style="margin-top:15px">No live support backend is connected. Customer issues can be added here when a backend is connected.</div><a class="btn green" href="tel:+919493985678">📞 Call Sri Ram Grand</a></div>`;
+}
+function reviewsHTML(){
+ return `<div class="panel"><h2>⭐ Review Management</h2><p class="muted">Demo reviews require admin approval before public display.</p><div class="table-wrap" style="margin-top:15px"><table class="table"><tr><th>Guest</th><th>Rating</th><th>Review</th><th>Status</th><th>Action</th></tr><tr><td>Demo Guest</td><td>★★★★★</td><td>Comfortable stay</td><td><span class="badge pending">PENDING</span></td><td><button class="btn light" onclick="toast('Review approved')">Approve</button></td></tr></table></div></div>`;
+}
+function galleryHTML(){
+ return `<div class="panel"><h2>🖼️ Gallery Management</h2><p class="muted">For the single-file demo, these images are configured in the HTML. A production version can connect image upload storage.</p><div class="gallery" style="margin-top:15px">${[...document.querySelectorAll('.gallery img')].map(i=>`<img src="${i.src}" alt="${i.alt}">`).join('')}</div></div>`;
+}
+function reportsHTML(){
+ const paid=bookings.filter(b=>b.paymentStatus==='PAID').length,rev=bookings.filter(b=>b.paymentStatus==='PAID').reduce((s,b)=>s+b.total,0),occ=rooms.filter(r=>r.status==='OCCUPIED').length;
+ return `<div class="stats"><div class="stat"><small>Occupancy Demo</small><strong>${Math.round(occ/rooms.length*100)}%</strong></div><div class="stat"><small>Paid</small><strong>${paid}</strong></div><div class="stat"><small>Unpaid</small><strong>${bookings.length-paid}</strong></div><div class="stat"><small>Paid Revenue</small><strong>₹${rev}</strong></div></div><div class="panel"><h2>📈 Booking Insights</h2><p class="muted">These values are calculated from demo/local bookings stored in this browser.</p><div style="margin-top:20px"><div class="alert">🛏️ Most configured room: Deluxe Room</div><div class="alert">📅 Booking count: ${bookings.length}</div><div class="alert">💳 Paid vs unpaid: ${paid} / ${bookings.length-paid}</div></div></div>`;
+}
+function settingsHTML(){
+ return `<div class="panel"><h2>⚙️ Hotel Settings</h2><div class="formgrid" style="margin-top:15px"><div class="field"><label>Hotel Name</label><input value="Sri Ram Grand"></div><div class="field"><label>Contact Number</label><input value="+91 94939 85678"></div><div class="field full"><label>Address</label><textarea rows="3">14-9-7, Tirumalarao Street, Hanumanpet, Vijayawada, Andhra Pradesh, India</textarea></div><div class="field"><label>Check-in Time</label><input value="12:00 PM"></div><div class="field"><label>Check-out Time</label><input value="11:00 AM"></div></div><button class="btn" style="margin-top:15px" onclick="toast('Settings saved for this demo')">Save Settings</button></div><div class="panel"><h2>🔐 Security</h2><p class="muted">Demo authentication uses browser localStorage. Production deployment should use secure server-side authentication, hashed passwords, sessions/tokens and role-based access control.</p></div>`;
+}
+
+document.getElementById('searchIn').addEventListener('change',()=>{const v=document.getElementById('searchIn').value;document.getElementById('searchOut').min=v});
+document.getElementById('bookIn').addEventListener('change',()=>{document.getElementById('bookOut').min=document.getElementById('bookIn').value;updateBookingSummary()});
+renderRooms();renderStatus();
+if(adminLogged)showAdmin();
+</script>
+</body>
+</html>
